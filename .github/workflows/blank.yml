@@ -26,7 +26,7 @@ jobs:
         uses: chetan/invalidate-cloudfront-action@v2
         env:
           DISTRIBUTION: ${{ secrets.AWS_PUBLIC_MIRROR_CLOUDFRONT_DISTRIBUTION_ID }}
-          PATHS: " / /index.html /packages.json /p2/*"
+          PATHS: "/ /index.html /packages.json /p2/*"
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_PUBLIC_MIRROR_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_PUBLIC_MIRROR_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_PUBLIC_MIRROR_REGION }}
