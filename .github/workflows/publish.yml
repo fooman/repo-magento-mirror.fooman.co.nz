@@ -22,7 +22,7 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_PUBLIC_MIRROR_REGION }}
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
           purge: false
-          debug: true
+          debug: false
           
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@v2
