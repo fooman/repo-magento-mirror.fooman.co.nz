@@ -1,0 +1,48 @@
+{
+    "name": "fooman/repo-magento-mirror",
+    "homepage": "https://repo-magento-mirror.fooman.co.nz/",
+    "repositories": [
+        {"type": "composer", "url": "https://repo.magento.com"},
+        {"type": "vcs", "url": "git@github.com:magento/upward-php.git"},
+        {"type": "vcs", "url": "git@github.com:magento/magento2-upward-connector.git"},
+        {"type": "vcs", "url": "git@github.com:magento/pwa-tests.git"},
+        {"type": "vcs", "url": "git@github.com:magento/magento2-functional-testing-framework.git"}
+    ],
+    "require": {
+        "magento/project-community-edition": "*",
+        "magento/module-upward-connector": "*",
+        "magento/pwa-tests": "*",
+        "magento/magento2-functional-testing-framework": "*",
+        "magento/composer": "*",
+        "magento/module-bundle-sample-data": "*",
+        "magento/module-catalog-rule-sample-data": "*",
+        "magento/module-catalog-sample-data": "*",
+        "magento/module-cms-sample-data": "*",
+        "magento/module-configurable-sample-data": "*",
+        "magento/module-customer-sample-data": "*",
+        "magento/module-downloadable-sample-data": "*",
+        "magento/module-grouped-product-sample-data": "*",
+        "magento/module-msrp-sample-data": "*",
+        "magento/module-offline-shipping-sample-data": "*",
+        "magento/module-product-links-sample-data": "*",
+        "magento/module-review-sample-data": "*",
+        "magento/module-sales-rule-sample-data": "*",
+        "magento/module-sales-sample-data": "*",
+        "magento/module-swatches-sample-data": "*",
+        "magento/module-tax-sample-data": "*",
+        "magento/module-theme-sample-data": "*",
+        "magento/module-widget-sample-data": "*",
+        "magento/module-wishlist-sample-data": "*",
+        "magento/sample-data-media": "*"
+    },
+    "require-dependencies": true,
+    "require-dependency-filter": false,
+    "archive": {
+        "directory": "dist",
+        "format": "zip",
+        "prefix-url": "https://repo-magento-mirror.fooman.co.nz",
+        "skip-dev": true,
+        "checksum": false
+    },
+    "notify-batch": "https://stats-magento-mirror.fooman.co.nz/mirror-downloads/"
+}
