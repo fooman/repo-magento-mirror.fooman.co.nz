@@ -16,13 +16,13 @@ jobs:
         uses: scottcharlesworth/satis-s3-action@v2
         with:
           s3_bucket: ${{ secrets.AWS_PUBLIC_MIRROR_BUCKET }}
+          purge: false
+          debug: false
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_PUBLIC_MIRROR_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_PUBLIC_MIRROR_SECRET_ACCESS_KEY }}
           AWS_REGION: ${{ secrets.AWS_PUBLIC_MIRROR_REGION }}
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-          purge: false
-          debug: false
           
       - name: Invalidate CloudFront
         uses: chetan/invalidate-cloudfront-action@v2
