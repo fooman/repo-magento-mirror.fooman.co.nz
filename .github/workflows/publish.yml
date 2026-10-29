@@ -27,6 +27,7 @@ jobs:
         with:
           php-version: '8.4'
           tools: composer
+          coverage: none
 
       - name: Install satis
         run: composer create-project composer/satis:dev-main /tmp/satis --no-interaction --quiet
