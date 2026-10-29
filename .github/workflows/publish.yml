@@ -21,9 +21,9 @@ jobs:
       changed: ${{ steps.compare.outputs.changed }}
       fingerprint: ${{ steps.fingerprint.outputs.fingerprint }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - uses: shivammathur/setup-php@v2
+      - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
         with:
           php-version: '8.4'
           tools: composer
@@ -80,10 +80,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Satis S3
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Run satis-s3-action
-        uses: scottcharlesworth/satis-s3-action@v2
+        uses: scottcharlesworth/satis-s3-action@bf64ea46d9f9ecaadee60ca2c40108637c1f1e09 # v2.0.0
         with:
           s3_bucket: ${{ secrets.AWS_PUBLIC_MIRROR_BUCKET }}
           purge: false
@@ -95,7 +95,7 @@ jobs:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
 
       - name: Invalidate CloudFront
-        uses: chetan/invalidate-cloudfront-action@v2
+        uses: chetan/invalidate-cloudfront-action@6adb1f613f4102ad81cd08a7ba83b8abe490cb8d # v2.4.2
         env:
           DISTRIBUTION: ${{ secrets.AWS_PUBLIC_MIRROR_CLOUDFRONT_DISTRIBUTION_ID }}
           PATHS: "/ /index.html /packages.json /p2/*"
@@ -119,4 +119,4 @@ jobs:
     permissions:
       actions: write
     steps:
-      - uses: liskin/gh-workflow-keepalive@v1
+      - uses: liskin/gh-workflow-keepalive@f72ff1a1336129f29bf0166c0fd0ca6cf1bcb38c # v1.2.1
